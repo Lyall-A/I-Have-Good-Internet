@@ -1,0 +1,11 @@
+{
+    "webPort": 8080,
+    "speedtestHost": "localhost",
+    "speedtestPort": 8081,
+    "downloadLength": 100000,
+    "customServerListData": {},
+    "trySendResults": false,
+    "customResultData": {
+        "resultid": "penis"
+    }
+}
