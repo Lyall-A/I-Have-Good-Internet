@@ -16,7 +16,7 @@ speedServer.any("*", (req, res, next) => {
 
 // Pre-test stuff
 speedServer.get("/ping", (req, res) => res.send("pong"));
-speedServer.get("/getip", (req, res) => res.send("idk"));
+speedServer.get("/getip", (req, res) => res.send(`${config.customIP || "idk"}`));
 speedServer.get("/capabilities", (req, res) => res.send("capabilities idk"));
 // speedServer.get("/capabilities", (req, res) => res.send("capabilities SERVER_HOST_AUTH UPLOAD_STATS"));
 
