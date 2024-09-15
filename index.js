@@ -47,6 +47,17 @@ speedServer.any("*", (req, res) => res.sendStatus(404));
 
 // Web server
 
+webServer.get("/", (req, res) => {
+    webProxy(req, res, (stReq, stRes, data) => {
+        try {
+            let html = data.toString();
+            if (config.customIP) html = html.replace(/"ip": *"(.*?)"/, (match, ip) => match.replace(ip, config.customIP));
+            if (config.customISP) html = html.replace(/"isp": *"(.*?)"/, (match, isp) => match.replace(isp, config.customISP));
+            res.html(html);
+        } catch (err) { res.sendStatus(500) };
+    });
+});
+
 webServer.get("/api/js/servers", (req, res) => {
     // Send custom server list
     webProxy(req, res, (stReq, stRes, data) => {

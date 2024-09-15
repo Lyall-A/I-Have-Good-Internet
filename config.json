@@ -7,5 +7,7 @@
     "trySendResults": false,
     "customResultData": {
         "resultid": "penis"
-    }
+    },
+    "customISP": "YouFibre",
+    "customIP": "123.69.42.069"
 }
